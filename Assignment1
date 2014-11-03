@@ -1,3 +1,14 @@
+Generate the following pattern:
+* * * * * * * *
+ * * * * * * *
+  * * * * * *
+   * * * * *
+    * * * *
+    * * *
+     * *
+      *
+
+
 public class ass1 {
 
 	/**
