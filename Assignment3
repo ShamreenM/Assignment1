@@ -1,0 +1,39 @@
+Accept a number, maximum of 3 digits, and represent it in words.
+For example:
+123 - One Hundred And Twenty Three
+---------------------------------------------------------------------------------------------------------------------------------------
+import java.util.*;
+ 
+public class numbertowords {
+    public void numberToword(int n, String ch) {
+        String one[] = {" ", "One", "Two", "Three", "Four", " Five", " Six", "Seven", "Eight", " Nine", " Ten", " Eleven", " Twelve", " Thirteen", " Fourteen", "Fifteen", " Sixteen", " Seventeen", " Eighteen", " Nineteen"
+        };
+        String ten[] = {" ", " ", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", " Ninety"};
+        if (n > 19) {
+            System.out.print(ten[n / 10] + " " + one[n % 10]);
+        } else {
+            System.out.print(one[n]);
+        }
+        if (n > 0) {
+            System.out.print(ch);
+        }
+    }
+    public static void main(String[] args) {
+        int n = 0;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter an integer number: ");
+        n = s.nextInt();
+        if (n <= 0 || n > 999) {
+            System.out.print("Not a valid Number....Enter a 3 digit number");
+            System.exit(0);
+        }
+        else {
+            numbertowords a = new numbertowords();
+            System.out.print("After conversion number in words is :");
+            a.numberToword((n / 100), " Hundred");
+            if((n % 100)>0)
+            	System.out.print(" And ");
+            a.numberToword((n % 100), " ");
+        }
+    }
+}
