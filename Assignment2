@@ -1,0 +1,41 @@
+Accept input continuously and check if entered String is a palindrome. Stop accepting input if the user enters ‘GSCRnsit’. The term should be case sensitive.
+
+import java.util.Scanner;
+
+
+public class String_Palindrome {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s,reverse="";
+		int len;
+	 Scanner in = new Scanner(System.in);
+		System.out.println("Enter input");
+	      s = in.nextLine();
+	      len=s.length();
+		 
+	      int intIndex = s.indexOf("GSCRnsit");
+	      
+	      if(intIndex > 0){
+	         System.out.println("GSCRnsit  found");
+	         System.exit(0);
+	      }
+	      else{
+	         System.out.println("GSCRnsit not found");
+	         for ( int i = len - 1; i >= 0; i-- )
+	             reverse = reverse + s.charAt(i);
+	         if (s.equals(reverse))
+	             System.out.println("Input is a palindrome.");
+	          else
+	             System.out.println("Input is not a palindrome.");
+	     
+	      }
+	}
+
+	
+	     
+	}
+
